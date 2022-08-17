@@ -36,6 +36,7 @@ const SignUpForm = () => {
         email,
         password
       );
+
       await createUserDocumentFromAuth(user, { displayName });
       setFormFields(defaultFormFields);
     } catch (error) {
@@ -47,7 +48,6 @@ const SignUpForm = () => {
     }
   };
 
-  console.log(formFields);
   return (
     <div className='sign-up-container'>
       <h1>Don't have an account?</h1>
