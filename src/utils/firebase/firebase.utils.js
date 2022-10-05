@@ -32,6 +32,7 @@ const firebaseConfig = {
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
+
 const googleProvider = new GoogleAuthProvider();
 
 googleProvider.setCustomParameters({
@@ -39,8 +40,10 @@ googleProvider.setCustomParameters({
 });
 
 export const auth = getAuth();
+
 export const signInWithGooglePopup = () =>
   signInWithPopup(auth, googleProvider);
+
 export const signInWithGoogleRedirect = () =>
   signInWithRedirect(auth, googleProvider);
 
@@ -48,7 +51,8 @@ export const db = getFirestore();
 
 export const addCollectionAndDocuments = async (
   collectionKey,
-  objectsToAdd
+  objectsToAdd,
+  field
 ) => {
   const collectionRef = collection(db, collectionKey);
   const batch = writeBatch(db);
@@ -102,7 +106,9 @@ export const createUserDocumentFromAuth = async (
       console.log('Error creating user -', error.message);
     }
   }
-  return userDocRef;
+  // return userDocRef;
+  //? changed now that we use redux saga
+  return userSnapshot;
 };
 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
@@ -121,3 +127,32 @@ export const signOutUser = async () => signOut(auth);
 
 export const onAuthStateChangedListener = (callback) =>
   onAuthStateChanged(auth, callback);
+
+// see if there is an active user thats been authenticated already
+//? Number 5 in redux saga flow
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = onAuthStateChanged(
+      auth,
+      (userAuth) => {
+        unsubscribe();
+        // if we dont put unsubscribe there will be a memory leak - meaning the listener is always active
+        resolve(userAuth);
+      },
+      reject
+    );
+  });
+};
+
+// export const getCurrentUser = () => {
+//   return new Promise((resolve, reject) => {
+//     const unsubscribe = onAuthStateChanged(
+//       auth,
+//       (userAuth) => {
+//         unsubscribe();
+//         resolve(userAuth);
+//       },
+//       reject
+//     );
+//   });
+// };

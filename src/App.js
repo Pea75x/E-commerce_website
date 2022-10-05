@@ -7,24 +7,28 @@ import Nav from './routes/navigation/navigation.component';
 import Authentication from './routes/authentication/authentication';
 import Shop from './routes/shop/shop.component';
 import Checkout from './routes/checkout/checkout';
-import { setCurrentUser } from './store/user/user.action';
+import { checkUserSession } from './store/user/user.action';
 import {
   onAuthStateChangedListener,
-  createUserDocumentFromAuth
+  createUserDocumentFromAuth,
+  getCurrentUser
 } from './utils/firebase/firebase.utils';
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChangedListener((user) => {
-      if (user) {
-        createUserDocumentFromAuth(user);
-      }
-      dispatch(setCurrentUser(user));
-    });
-    return unsubscribe;
-  }, [dispatch]);
+    //? number 1 in flow
+    dispatch(checkUserSession());
+    // ? dont need this anymore now we have done redux-saga
+    // const unsubscribe = onAuthStateChangedListener((user) => {
+    //   if (user) {
+    //     createUserDocumentFromAuth(user);
+    //   }
+    //   dispatch(setCurrentUser(user));
+    // });
+    // return unsubscribe;
+  }, []);
 
   return (
     <Routes>

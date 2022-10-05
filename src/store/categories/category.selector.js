@@ -21,3 +21,8 @@ export const selectCategoriesMap = createSelector(
 );
 
 // Memozing helps stop unnecessary re-rendering/ optimizes code
+
+export const selectCategoriesIsLoading = createSelector(
+  [selectCategoryReducer],
+  (categoriesSlice) => categoriesSlice.isLoading
+);

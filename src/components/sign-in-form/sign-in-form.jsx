@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import {
   signInWithGooglePopup,
   signInAuthWithEmailAndPassword,
@@ -7,6 +8,7 @@ import {
 import FormInput from '../form-input/form-input';
 import './sign-in-form.styles.scss';
 import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
+import { googleSignInStart } from '../../store/user/user.action';
 
 const defaultFormFields = {
   email: '',
@@ -14,6 +16,7 @@ const defaultFormFields = {
 };
 
 const SignInForm = () => {
+  const dispatch = useDispatch();
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
@@ -23,7 +26,9 @@ const SignInForm = () => {
   };
 
   const signInWithGoogle = async () => {
-    await signInWithGooglePopup();
+    dispatch(googleSignInStart());
+    //? No longer using with redux saga
+    // await signInWithGooglePopup();
   };
 
   const handleSubmit = async (event) => {
