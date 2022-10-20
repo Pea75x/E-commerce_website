@@ -8,7 +8,10 @@ import {
 import FormInput from '../form-input/form-input';
 import './sign-in-form.styles.scss';
 import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
-import { googleSignInStart } from '../../store/user/user.action';
+import {
+  googleSignInStart,
+  emailSignInStart
+} from '../../store/user/user.action';
 
 const defaultFormFields = {
   email: '',
@@ -35,7 +38,7 @@ const SignInForm = () => {
     event.preventDefault();
 
     try {
-      const { user } = await signInAuthWithEmailAndPassword(email, password);
+      dispatch(emailSignInStart(email, password));
       setFormFields(defaultFormFields);
     } catch (error) {
       switch (error.code) {
