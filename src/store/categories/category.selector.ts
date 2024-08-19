@@ -1,9 +1,9 @@
 import { createSelector } from 'reselect';
+import { CategoriesState } from './category.reducer';
+import { CategoryMap } from './category.types';
 
-const selectCategoryReducer = (state) => state.categories;
+const selectCategoryReducer = (state): CategoriesState => state.categories;
 
-//? MEMOIZE - will only run if the categories value is different
-// createSelector creates a memoize selector - takes 2 arguments - array of input selectors - and output selector
 export const selectCategories = createSelector(
   [selectCategoryReducer],
   (categoriesSlice) => categoriesSlice.categories
@@ -12,12 +12,12 @@ export const selectCategories = createSelector(
 // also memoized and wont run when categories value is same
 export const selectCategoriesMap = createSelector(
   [selectCategories],
-  (categories) =>
+  (categories): CategoryMap =>
     categories.reduce((acc, category) => {
       const { title, items } = category;
       acc[title.toLowerCase()] = items;
       return acc;
-    }, {})
+    }, {} as CategoryMap)
 );
 
 // Memozing helps stop unnecessary re-rendering/ optimizes code

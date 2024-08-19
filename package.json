@@ -9,6 +9,10 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^22.4.1",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "dotenv": "^16.0.3",
     "firebase": "^9.9.2",
     "mailslurp-client": "^15.13.3",
@@ -27,6 +31,7 @@
     "stripe": "^10.15.0",
     "styled-components": "^5.3.5",
     "thunk": "^0.0.1",
+    "typescript": "^5.5.4",
     "util": "^0.12.4",
     "web-vitals": "^2.1.4"
   },
