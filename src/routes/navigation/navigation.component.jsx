@@ -5,12 +5,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import CartIcon from '../../components/cart-icon/cart-icon';
 import CartDropdown from '../../components/cart-dropdown/cart-dropdown';
 
-import { selectIsCartOpen } from '../../store/cart/cart.selector';
-import { selectCurrentUser } from '../../store/user/user.selector';
+import { selectIsCartOpen } from '../../store/cart/cart.selector.ts';
+import { selectCurrentUser } from '../../store/user/user.selector.ts';
 
 import { ReactComponent as CrownLogo } from '../../assets/crown.svg';
 // import { signOutUser } from '../../utils/firebase/firebase.utils';
-import { signOutStart } from '../../store/user/user.action';
+import { signOutStart } from '../../store/user/user.action.ts';
 
 import {
   NavigationContainer,

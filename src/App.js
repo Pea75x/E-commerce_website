@@ -7,12 +7,7 @@ import Nav from './routes/navigation/navigation.component';
 import Authentication from './routes/authentication/authentication';
 import Shop from './routes/shop/shop.component';
 import Checkout from './routes/checkout/checkout';
-import { checkUserSession } from './store/user/user.action';
-import {
-  onAuthStateChangedListener,
-  createUserDocumentFromAuth,
-  getCurrentUser
-} from './utils/firebase/firebase.utils';
+import { checkUserSession } from './store/user/user.action.ts';
 
 function App() {
   const dispatch = useDispatch();

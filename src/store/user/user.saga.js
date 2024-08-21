@@ -7,7 +7,7 @@ import {
   signUpFailed,
   signOutFailed,
   signOutSuccess
-} from './user.action';
+} from './user.action.ts';
 import {
   getCurrentUser,
   createUserDocumentFromAuth,

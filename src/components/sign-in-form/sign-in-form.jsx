@@ -1,17 +1,12 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {
-  signInWithGooglePopup,
-  signInAuthWithEmailAndPassword,
-  createUserDocumentFromAuth
-} from '../../utils/firebase/firebase.utils';
 import FormInput from '../form-input/form-input';
 import './sign-in-form.styles.scss';
 import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
 import {
   googleSignInStart,
   emailSignInStart
-} from '../../store/user/user.action';
+} from '../../store/user/user.action.ts';
 
 const defaultFormFields = {
   email: '',
