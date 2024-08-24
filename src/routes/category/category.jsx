@@ -5,7 +5,7 @@ import { useState, useEffect, Fragment } from 'react';
 import {
   selectCategoriesMap,
   selectCategoriesIsLoading
-} from '../../store/categories/category.selector';
+} from '../../store/categories/category.selector.ts';
 import ProductCard from '../../components/product-card/product-card';
 import Spinner from '../../components/spinner/spinner.components';
 

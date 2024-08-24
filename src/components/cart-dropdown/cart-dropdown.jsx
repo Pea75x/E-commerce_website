@@ -6,7 +6,7 @@ import {
 } from './cart-dropdown.styles.jsx';
 import Button from '../button/button.component';
 import CartItem from '../cart-item/cart-item';
-import { selectCartItems } from '../../store/cart/cart.selector';
+import { selectCartItems } from '../../store/cart/cart.selector.ts';
 import { useNavigate } from 'react-router-dom';
 
 const CartDropdown = () => {

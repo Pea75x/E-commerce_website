@@ -1,4 +1,4 @@
-import { CategoryItem } from '../categories/category.types';
+import { CategoryItem } from '../categories/category.types.ts';
 
 export enum CART_ACTION_TYPES {
   SET_CART_ITEMS = 'cart/SET_CART_ITEMS',

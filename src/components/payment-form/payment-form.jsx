@@ -7,8 +7,8 @@ import {
   PaymentButton
 } from './payment-form.styles';
 import { useSelector } from 'react-redux';
-import { selectCartTotal } from '../../store/cart/cart.selector';
-import { selectCurrentUser } from '../../store/user/user.selector';
+import { selectCartTotal } from '../../store/cart/cart.selector.ts';
+import { selectCurrentUser } from '../../store/user/user.selector.ts';
 
 const PaymentForm = () => {
   const stripe = useStripe();

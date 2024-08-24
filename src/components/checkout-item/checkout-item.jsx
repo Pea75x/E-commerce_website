@@ -1,6 +1,6 @@
 import './checkout-item.styles.scss';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectCartItems } from '../../store/cart/cart.selector';
+import { selectCartItems } from '../../store/cart/cart.selector.ts';
 
 import {
   addItemToCart,

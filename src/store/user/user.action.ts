@@ -1,14 +1,14 @@
-import { USER_ACTION_TYPES } from './user.types';
+import { USER_ACTION_TYPES } from './user.types.ts';
 import {
   createAction,
   withMatcher,
   Action,
   ActionWithPayload
-} from '../../utils/reducer/reducer.utils';
+} from '../../utils/reducer/reducer.utils.ts';
 import {
   UserData,
   AdditionalInformation
-} from '../../utils/firebase/firebase.utils';
+} from '../../utils/firebase/firebase.utils.ts';
 
 export type SetCurrentUser = ActionWithPayload<
   USER_ACTION_TYPES.SET_CURRENT_USER,

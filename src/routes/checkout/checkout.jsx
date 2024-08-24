@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import {
   selectCartItems,
   selectCartTotal
-} from '../../store/cart/cart.selector';
+} from '../../store/cart/cart.selector.ts';
 
 import './checkout.styles.scss';
 import CheckoutItem from '../../components/checkout-item/checkout-item';

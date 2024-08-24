@@ -1,5 +1,5 @@
 import { takeLatest, put, all, call } from 'redux-saga/effects';
-import { USER_ACTION_TYPES } from './user.types';
+import { USER_ACTION_TYPES } from './user.types.ts';
 import {
   signInSuccess,
   signInFailed,
@@ -15,7 +15,7 @@ import {
   signInAuthWithEmailAndPassword,
   createAuthUserWithEmailAndPassword,
   signOutUser
-} from '../../utils/firebase/firebase.utils';
+} from '../../utils/firebase/firebase.utils.ts';
 
 //? Number 6 in Saga Flow
 export function* getSnapshotFromUserAuth(userAuth, additionalDetails) {
