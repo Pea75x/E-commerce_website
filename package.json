@@ -14,6 +14,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@types/redux-logger": "^3.0.13",
+    "babel-plugin-macros": "^3.1.0",
     "dotenv": "^16.0.3",
     "firebase": "^9.9.2",
     "mailslurp-client": "^15.13.3",
@@ -32,6 +33,7 @@
     "stripe": "^10.15.0",
     "styled-components": "^5.3.5",
     "thunk": "^0.0.1",
+    "typed-redux-saga": "^1.5.0",
     "typescript": "^5.5.4",
     "util": "^0.12.4",
     "web-vitals": "^2.1.4"
