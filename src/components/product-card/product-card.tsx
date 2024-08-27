@@ -3,8 +3,14 @@ import { addItemToCart } from '../../store/cart/cart.action.ts';
 import { selectCartItems } from '../../store/cart/cart.selector.ts';
 import './product-card.styles.scss';
 import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component.tsx';
+import React, { FC } from 'react';
+import { CategoryItem } from '../../store/categories/category.types.ts';
 
-const ProductCard = ({ product }) => {
+type ProductCardProps = {
+  product: CategoryItem;
+};
+
+const ProductCard: FC<ProductCardProps> = ({ product }) => {
   const { name, price, imageUrl } = product;
 
   const cartItems = useSelector(selectCartItems);

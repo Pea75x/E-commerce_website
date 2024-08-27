@@ -3,8 +3,9 @@ import {
   selectCategoriesMap,
   selectCategoriesIsLoading
 } from '../../store/categories/category.selector.ts';
-import CategoryPreview from '../../components/category-preview/category-preview';
-import Spinner from '../../components/spinner/spinner.components';
+import CategoryPreview from '../../components/category-preview/category-preview.tsx';
+import Spinner from '../../components/spinner/spinner.components.tsx';
+import React from 'react';
 
 const CategoriesPreview = () => {
   const isLoading = useSelector(selectCategoriesIsLoading);

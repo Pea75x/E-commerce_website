@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import './shop.styles.scss';
-import CategoriesPreview from '../categories-preview/categories-preview';
+import CategoriesPreview from '../categories-preview/categories-preview.tsx';
 import Category from '../category/category.tsx';
 import { fetchCategoriesStart } from '../../store/categories/category.action.ts';
 

@@ -3,11 +3,12 @@ import {
   CartDropdownContainer,
   EmptyMessage,
   CartItems
-} from './cart-dropdown.styles.jsx';
+} from './cart-dropdown.styles.tsx';
 import Button from '../button/button.component.tsx';
-import CartItem from '../cart-item/cart-item';
+import CartItem from '../cart-item/cart-item.tsx';
 import { selectCartItems } from '../../store/cart/cart.selector.ts';
 import { useNavigate } from 'react-router-dom';
+import React from 'react';
 
 const CartDropdown = () => {
   const cartItems = useSelector(selectCartItems);

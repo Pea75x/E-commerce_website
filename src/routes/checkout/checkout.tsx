@@ -3,9 +3,9 @@ import {
   selectCartItems,
   selectCartTotal
 } from '../../store/cart/cart.selector.ts';
-
+import React from 'react';
 import './checkout.styles.scss';
-import CheckoutItem from '../../components/checkout-item/checkout-item';
+import CheckoutItem from '../../components/checkout-item/checkout-item.tsx';
 import PaymentForm from '../../components/payment-form/payment-form.tsx';
 
 const Checkout = () => {

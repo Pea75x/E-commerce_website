@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import CartIcon from '../../components/cart-icon/cart-icon.tsx';
-import CartDropdown from '../../components/cart-dropdown/cart-dropdown.jsx';
+import CartDropdown from '../../components/cart-dropdown/cart-dropdown.tsx';
 
 import { selectIsCartOpen } from '../../store/cart/cart.selector.ts';
 import { selectCurrentUser } from '../../store/user/user.selector.ts';

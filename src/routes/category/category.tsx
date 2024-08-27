@@ -6,8 +6,8 @@ import {
   selectCategoriesMap,
   selectCategoriesIsLoading
 } from '../../store/categories/category.selector.ts';
-import ProductCard from '../../components/product-card/product-card.jsx';
-import Spinner from '../../components/spinner/spinner.components.jsx';
+import ProductCard from '../../components/product-card/product-card.tsx';
+import Spinner from '../../components/spinner/spinner.components.tsx';
 import React from 'react';
 
 type CategoryRouteParams = {

@@ -1,4 +1,4 @@
-import { useState, FormEvent, ChangeEvent } from 'react';
+import React, { useState, FormEvent, ChangeEvent } from 'react';
 import { useDispatch } from 'react-redux';
 import FormInput from '../form-input/form-input.tsx';
 import './sign-in-form.styles.scss';
