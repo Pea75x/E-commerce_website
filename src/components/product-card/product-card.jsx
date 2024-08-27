@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addItemToCart } from '../../store/cart/cart.action.ts';
 import { selectCartItems } from '../../store/cart/cart.selector.ts';
 import './product-card.styles.scss';
-import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
+import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component.tsx';
 
 const ProductCard = ({ product }) => {
   const { name, price, imageUrl } = product;

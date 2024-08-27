@@ -6,7 +6,7 @@ import {
 
 import './checkout.styles.scss';
 import CheckoutItem from '../../components/checkout-item/checkout-item';
-import PaymentForm from '../../components/payment-form/payment-form';
+import PaymentForm from '../../components/payment-form/payment-form.tsx';
 
 const Checkout = () => {
   // const { cartItems, cartTotal } = useContext(CartContext);

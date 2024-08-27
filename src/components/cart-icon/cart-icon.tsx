@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
 
 import {
   selectCartCount,
@@ -10,7 +11,7 @@ import {
   ShoppingIcon,
   CartIconContainer,
   ItemCount
-} from './cart-icon.styles.jsx';
+} from './cart-icon.styles.tsx';
 
 const CartIcon = () => {
   // const { isCartOpen, setIsCartOpen, cartCount } = useContext(CartContext);

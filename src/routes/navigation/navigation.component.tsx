@@ -2,8 +2,8 @@ import { Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
-import CartIcon from '../../components/cart-icon/cart-icon';
-import CartDropdown from '../../components/cart-dropdown/cart-dropdown';
+import CartIcon from '../../components/cart-icon/cart-icon.tsx';
+import CartDropdown from '../../components/cart-dropdown/cart-dropdown.jsx';
 
 import { selectIsCartOpen } from '../../store/cart/cart.selector.ts';
 import { selectCurrentUser } from '../../store/user/user.selector.ts';
@@ -17,7 +17,8 @@ import {
   LogoContainer,
   NavLinks,
   NavLink
-} from './navigation.styles.jsx';
+} from './navigation.styles.tsx';
+import React from 'react';
 
 function Nav() {
   const dispatch = useDispatch();

@@ -6,18 +6,23 @@ import {
   selectCategoriesMap,
   selectCategoriesIsLoading
 } from '../../store/categories/category.selector.ts';
-import ProductCard from '../../components/product-card/product-card';
-import Spinner from '../../components/spinner/spinner.components';
+import ProductCard from '../../components/product-card/product-card.jsx';
+import Spinner from '../../components/spinner/spinner.components.jsx';
+import React from 'react';
+
+type CategoryRouteParams = {
+  category: string;
+};
 
 const Category = () => {
-  console.log('render/ re-render category component');
-  const { category } = useParams();
+  const { category } = useParams<
+    keyof CategoryRouteParams
+  >() as CategoryRouteParams;
   const categoriesMap = useSelector(selectCategoriesMap);
   const isLoading = useSelector(selectCategoriesIsLoading);
   const [products, setProducts] = useState(categoriesMap[category]);
 
   useEffect(() => {
-    console.log('effect fired calling setProducts');
     setProducts(categoriesMap[category]);
   }, [category, categoriesMap]);
 
