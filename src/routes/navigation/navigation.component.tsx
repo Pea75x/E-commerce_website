@@ -11,6 +11,7 @@ import { selectCurrentUser } from '../../store/user/user.selector.ts';
 import { ReactComponent as CrownLogo } from '../../assets/crown.svg';
 // import { signOutUser } from '../../utils/firebase/firebase.utils';
 import { signOutStart } from '../../store/user/user.action.ts';
+/// <reference types="react-scripts" />
 
 import {
   NavigationContainer,
